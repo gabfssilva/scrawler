@@ -1,13 +1,16 @@
 apply plugin: 'scala'
 
 repositories {
+    mavenCentral()
     jcenter()
 }
 
 def scalaVersion = '2.12'
+def seleniumVersion = '3.3.0'
 
 dependencies {
-    compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.24'
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version: seleniumVersion
+    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: seleniumVersion
 
     compile "org.scala-lang:scala-library:$scalaVersion.1"
 
@@ -15,3 +18,5 @@ dependencies {
     testCompile "org.scalatest:scalatest_$scalaVersion:3.0.1"
     testRuntime "org.scala-lang.modules:scala-xml_$scalaVersion:1.0.5"
 }
+
+
